@@ -1,0 +1,6 @@
+@import url('../base/root.css');
+
+.header__svg {
+  stroke: none;
+  fill: var(--main-accent-color);
+}

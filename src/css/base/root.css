@@ -1,0 +1,11 @@
+:root {
+  --main-accent-color: #ad46ff;
+  --main-text-color: #ffffff;
+  --description-text-color: #98989a;
+  --main-bg-color: #141414;
+  --card-bg-color: #191919;
+  --card-border-color: #858585;
+  --description-border-radius: 100px;
+  --card-border-radius: 12px;
+  --btn-border-radius: 10px;
+}

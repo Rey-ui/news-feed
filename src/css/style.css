@@ -1,18 +1,8 @@
-@import url('./reset.css');
-@import url('./loader.css');
-html,
-body {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; */
-  margin: 0 auto;
-  /* margin-top: 30px; */
-  padding: 0 15px;
-  background-color: #141414;
-}
-
+@import url('./base/reset.css');
+/* @import url('./loaders/loader.css'); */
+@import url('./base/base.css');
+@import url('./base/loader.css');
+@import url('./components/header.css');
 /* .wrapper {
   margin: 0 auto;
   margin-top: 20px;
@@ -23,3 +13,21 @@ body {
 
   gap: 20px;
 } */
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 375px;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 768px;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1440px;
+}
+.section {
+  padding: 25px 0;
+}

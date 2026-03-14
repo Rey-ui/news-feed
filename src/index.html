@@ -8,6 +8,62 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="header__logo">
+            <svg class="header__svg" width="35" height="30">
+              <use href="./img/svg/symbol-defs.svg#icon-books"></use>
+            </svg>
+            <span>NewsHub</span>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__item">
+                <a href="" class="header__item-link">Top Stories</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__item-link">Search news</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__item-link">Categories</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__country">
+            <div class="header__country-title">
+              <svg class="header__svg" width="35" height="30">
+                <use href="./img/svg/symbol-defs.svg#icon-globe"></use>
+              </svg>
+              <span>Country:</span>
+            </div>
+            <select class="header__country-select" name="country-select" id="">
+              <option value="en" selected>England/USA</option>
+              <option value="de">Deutschland</option>
+              <option value="es">España</option>
+              <option value="it">Italia</option>
+              <option value="fr">France</option>
+              <option value="zh">China</option>
+              <option value="sv">Sverige</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section hero">
+        <div class="container">
+          <h1 class="hero__title">Today's Headlines: Stay Informed</h1>
+          <div class="hero__content">
+            <div class="hero-loader"></div>
+            <ul class="hero__list"></ul>
+            <button class="hero__load-more" type="button">more</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
+<!-- ar de en es fr he it nl no pt ru sv ud zh -->
