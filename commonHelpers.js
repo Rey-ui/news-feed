@@ -1,6 +1,13 @@
-import{a as m,i as d}from"./assets/vendor-db25513e.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))a(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&a(c)}).observe(document,{childList:!0,subtree:!0});function i(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(r){if(r.ep)return;r.ep=!0;const s=i(r);fetch(r.href,s)}})();const n={countrySelect:document.querySelector(".header__country-select"),topHeadlinesHero:document.querySelector(".hero__list"),loadMoreBtnHero:document.querySelector(".hero__load-more"),heroLoader:document.querySelector(".hero-loader")};function u(e,t){const i=t.map(({title:a,author:r,description:s,publishedAt:c,urlToImage:h})=>`<li class="hero__item">
+import{a as m,i as c}from"./assets/vendor-db25513e.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const d of s.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&n(d)}).observe(document,{childList:!0,subtree:!0});function i(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(t){if(t.ep)return;t.ep=!0;const s=i(t);fetch(t.href,s)}})();const o={countrySelect:document.querySelector(".header__country-select"),topHeadlinesHero:document.querySelector(".hero__list"),loadMoreBtnHero:document.querySelector(".hero__load-more"),heroLoader:document.querySelector(".hero-loader"),heroPreLoader:document.querySelector(".hero-btn-loader"),headerBurgerBtn:document.querySelector(".header-burger__btn"),headerBurgerBtnClose:document.querySelector(".header-burger__btn-close")};function h(e,r){r.filter(({image_url:n})=>{n.width>="200px"});const i=r.map(({title:n,creator:t,description:s,pubDate:d,image_url:u})=>`<li class="hero__item">
                 <a href="#" class="hero__item-link">
-                  <div>${h?`<img src="${h}" alt="News" class=""/>`:`<div>
+                  <div>${u?`<div class="news-img-wrapper">
+        <img src="${u}" alt="News" style="width:100%; object-fit:cover; height:400px">
+        <div class="news-fallback" style="display:none">
+          <svg class="header__svg"  width="35" height="30">
+            <use href="./img/svg/symbol-defs.svg#icon-inbox-paper"></use>
+          </svg>
+        </div>
+     </div>`:`<div>
                             <svg class="header__svg" width="35" height="30">
                               <use
                                 href="./img/svg/symbol-defs.svg#icon-inbox-paper"
@@ -15,17 +22,17 @@ import{a as m,i as d}from"./assets/vendor-db25513e.js";(function(){const t=docum
                             href="./img/svg/symbol-defs.svg#icon-calendar"
                           ></use>
                         </svg>
-                        <span>${new Date(c).toLocaleDateString()}</span>
+                        <span>${new Date(d).toLocaleDateString()}</span>
                       </span>
                       <span>
                         <svg class="header__svg" width="35" height="30">
                           <use href="./img/svg/symbol-defs.svg#icon-user"></use>
                         </svg>
-                        <span>${r||"anon"}</span>
+                        <span>${t||"anon"}</span>
                       </span>
                     </div>
                     <div class="hero__item-text">
-                      <h3 class="hero__item-title">${a}</h3>
+                      <h3 class="hero__item-title">${n}</h3>
                       <p class="hero__item-description">${s}</p>
                     </div>
                   </div>
@@ -38,6 +45,5 @@ import{a as m,i as d}from"./assets/vendor-db25513e.js";(function(){const t=docum
                     ></use>
                   </svg>
                 </button>
-              </li>`).join("");e.insertAdjacentHTML("beforeend",i)}const y="1b829ccd00dd4f02b1e432714347e911",v="https://newsapi.org/v2";async function g({page:e,country:t,pageSize:i}){const a=`${v}/top-headlines?apiKey=${y}&country=${t}&pageSize=${i}&page=${e}`,r=`https://corsproxy.io/?${encodeURIComponent(a)}`,s=await m.get(r);return console.log(s.data),s.data}function _(e,t){e.classList.remove("hidden-hero"),e.addEventListener("click",t)}function p(e,t){e.classList.add("hidden-hero"),e.removeEventListener("click",t)}function L(e){e.classList.remove("hidden-hero")}function w(e){e.classList.add("hidden-hero")}const o={page:1,maxPage:0,country:"us",pageSize:5};async function f(){L(n.heroLoader);try{const{articles:e,totalResults:t}=await g(o);if(o.maxPage=Math.ceil(t/o.pageSize),!e.length){o.country="us",d.error({title:"Error",message:"❌Sorry, there is no news from this country!"});return}n.topHeadlinesHero.innerHTML="",u(n.topHeadlinesHero,e),e.length>0&&t!=e.length?_(n.loadMoreBtnHero,l):p(n.loadMoreBtnHero,l)}catch(e){console.log(e),d.error({title:"Error",message:"❌Sorry, nothing was found for your request!"})}finally{w(n.heroLoader)}}n.countrySelect.addEventListener("change",H);async function H(e){o.country=e.target.value,o.page=1,f()}async function l(){o.page+=1;try{const{articles:e}=await g(o);u(n.topHeadlinesHero,e)}catch{}finally{o.page>=o.maxPage&&(d.error({title:"Message",message:`We're sorry, but you've reached the end of search results.
-`}),p(n.loadMoreBtnHero,l))}}f();
+              </li>`).join("");e.insertAdjacentHTML("beforeend",i)}const v="pub_fd056b01d6364d47ac3a6a4561f99d82",y="https://newsdata.io/api/1/latest";async function g({country:e,size:r,page:i,category:n="top"}){const t=await m.get(`${y}`,{params:{apikey:v,country:e,category:n,size:r,image:1,removeduplicate:1,page:i}});return console.log(t.data),t.data}function _(e,r){e.classList.remove("hidden-hero"),e.addEventListener("click",r)}function f(e,r){e.classList.add("hidden-hero"),e.removeEventListener("click",r)}function L(e){e.classList.remove("hidden-hero")}function w(e){e.classList.add("hidden-hero")}function b(e,r){e.disabled=!0,r.classList.remove("hero-preload-hidden")}function H(e,r){e.disabled=!1,r.classList.add("hero-preload-hidden")}const a={page:null,maxPage:0,country:"us",size:5};async function p(){L(o.heroLoader);try{const{results:e,nextPage:r}=await g(a);if(!e.length){a.country="us",c.error({title:"Error",message:"❌Sorry, there is no news from this country!"});return}a.page=r,o.topHeadlinesHero.innerHTML="",h(o.topHeadlinesHero,e),r?_(o.loadMoreBtnHero,l):f(o.loadMoreBtnHero,l)}catch(e){console.log(e),c.error({title:"Error",message:"❌Sorry, nothing was found for your request!"})}finally{w(o.heroLoader)}}o.countrySelect.addEventListener("change",S);async function S(e){a.country=e.target.value,a.page=null,p()}async function l(){b(o.loadMoreBtnHero,o.heroPreLoader);try{const{results:e,nextPage:r}=await g(a);h(o.topHeadlinesHero,e),a.page=r,r||(c.info({title:"Message",message:"You've reached the end of results"}),f(o.loadMoreBtnHero,l))}catch{}finally{H(o.loadMoreBtnHero,o.heroPreLoader)}}p();document.addEventListener("error",function(e){if(e.target.tagName==="IMG"){e.target.style.display="none";const r=e.target.nextElementSibling;r&&(r.style.display="flex")}},!0);
 //# sourceMappingURL=commonHelpers.js.map
