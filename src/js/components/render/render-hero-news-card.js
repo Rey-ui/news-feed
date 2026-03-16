@@ -1,7 +1,6 @@
+import spritePath from '../../../img/svg/symbol-defs.svg';
+
 function markupHeroNewsCard(listEl, news) {
-  const newNews = news.filter(({ image_url }) => {
-    image_url.width >= '200px';
-  });
   const markup = news
     .map(({ title, creator, description, pubDate, image_url }) => {
       return `<li class="hero__item">
@@ -12,14 +11,14 @@ function markupHeroNewsCard(listEl, news) {
         <img src="${image_url}" alt="News" style="width:100%; object-fit:cover; height:400px">
         <div class="news-fallback" style="display:none">
           <svg class="header__svg"  width="35" height="30">
-            <use href="./img/svg/symbol-defs.svg#icon-inbox-paper"></use>
+            <use href="${spritePath}#icon-inbox-paper"></use>
           </svg>
         </div>
      </div>`
                       : `<div>
                             <svg class="header__svg" width="35" height="30">
                               <use
-                                href="./img/svg/symbol-defs.svg#icon-inbox-paper"
+                                href="${spritePath}#icon-inbox-paper"
                               ></use>
                             </svg>
                           </div>`
@@ -29,14 +28,14 @@ function markupHeroNewsCard(listEl, news) {
                       <span>
                         <svg class="header__svg" width="35" height="30">
                           <use
-                            href="./img/svg/symbol-defs.svg#icon-calendar"
+                            href="${spritePath}#icon-calendar"
                           ></use>
                         </svg>
                         <span>${new Date(pubDate).toLocaleDateString()}</span>
                       </span>
                       <span>
                         <svg class="header__svg" width="35" height="30">
-                          <use href="./img/svg/symbol-defs.svg#icon-user"></use>
+                          <use href="${spritePath}#icon-user"></use>
                         </svg>
                         <span>${creator || 'anon'}</span>
                       </span>
@@ -51,7 +50,7 @@ function markupHeroNewsCard(listEl, news) {
                   <span>Read More</span>
                   <svg class="header__svg" width="35" height="30">
                     <use
-                      href="./img/svg/symbol-defs.svg#icon-arrow-right"
+                      href="${spritePath}#icon-arrow-right"
                     ></use>
                   </svg>
                 </button>
