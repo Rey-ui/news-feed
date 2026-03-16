@@ -1,28 +1,39 @@
 import axios from 'axios';
-const API_KEY = '1b829ccd00dd4f02b1e432714347e911';
-const BASE_URL = 'https://newsapi.org/v2';
-async function searchTopHeadlinesNews({ page, country, pageSize }) {
-  const url = `${BASE_URL}/top-headlines?apiKey=${API_KEY}&country=${country}&pageSize=${pageSize}&page=${page}`;
-
-  const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
-
-  const response = await axios.get(proxyUrl);
-  console.log(response.data);
-  return response.data;
-}
-async function searchAllNews() {
-  const response = await axios.get(`${BASE_URL}/everything`, {
+const API_KEY = 'pub_fd056b01d6364d47ac3a6a4561f99d82';
+const BASE_URL = 'https://newsdata.io/api/1/latest';
+async function searchTopHeadlinesNews({
+  country,
+  size,
+  page,
+  category = 'top',
+}) {
+  const response = await axios.get(`${BASE_URL}`, {
     params: {
-      apiKey: API_KEY,
-      q: 'politic',
-
-      // language: 'us',
-      // category: 'business',
-      //   pageSize: 40,
-      //   page: 1,
+      apikey: API_KEY,
+      country,
+      category,
+      size,
+      image: 1,
+      removeduplicate: 1,
+      page,
     },
   });
   console.log(response.data);
   return response.data;
 }
-export { searchTopHeadlinesNews, searchAllNews };
+// async function searchAllNews() {
+//   const response = await axios.get(`${BASE_URL}/everything`, {
+//     params: {
+//       apiKey: API_KEY,
+//       q: 'politic',
+
+//       // language: 'us',
+//       // category: 'business',
+//       //   pageSize: 40,
+//       //   page: 1,
+//     },
+//   });
+//   console.log(response.data);
+//   return response.data;
+// }
+export { searchTopHeadlinesNews };

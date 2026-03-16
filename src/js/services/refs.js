@@ -3,4 +3,7 @@ export const refs = {
   topHeadlinesHero: document.querySelector('.hero__list'),
   loadMoreBtnHero: document.querySelector('.hero__load-more'),
   heroLoader: document.querySelector('.hero-loader'),
+  heroPreLoader: document.querySelector('.hero-btn-loader'),
+  headerBurgerBtn: document.querySelector('.header-burger__btn'),
+  headerBurgerBtnClose: document.querySelector('.header-burger__btn-close'),
 };

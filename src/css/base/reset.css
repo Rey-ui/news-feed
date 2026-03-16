@@ -65,10 +65,12 @@ a,
 a:visited {
   text-decoration: none;
   display: block;
+  color: inherit;
 }
 
 a:hover {
   text-decoration: none;
+  color: inherit;
 }
 
 ul li {

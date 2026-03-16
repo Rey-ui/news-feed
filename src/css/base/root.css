@@ -3,9 +3,15 @@
   --main-text-color: #ffffff;
   --description-text-color: #98989a;
   --main-bg-color: #141414;
+
   --card-bg-color: #191919;
+
   --card-border-color: #858585;
   --description-border-radius: 100px;
   --card-border-radius: 12px;
   --btn-border-radius: 10px;
+  --text-general: 16px;
+  --text-small: 14px;
+  --text-big: 18px;
+  --title-h3-text: 20px;
 }

@@ -13,21 +13,15 @@
 
   gap: 20px;
 } */
-.container {
-  margin: 0 auto;
-  padding: 0 15px;
-  max-width: 375px;
-}
-.container {
-  margin: 0 auto;
-  padding: 0 15px;
+
+/* .container {
+
   max-width: 768px;
 }
 .container {
-  margin: 0 auto;
-  padding: 0 15px;
+
   max-width: 1440px;
-}
+} */
 .section {
   padding: 25px 0;
 }

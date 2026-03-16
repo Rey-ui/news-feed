@@ -20,5 +20,29 @@ body {
 .hidden-hero {
   display: none;
 }
-.disable {
+.hero-preload-hidden {
+  display: none;
+}
+.hero__load-more:disabled {
+  background-color: #b5b5b5;
+  cursor: default;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 375px;
+}
+.hero__item-title {
+  text-transform: initial;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.hero__item-description {
+  text-transform: initial;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }

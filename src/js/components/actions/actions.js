@@ -51,4 +51,19 @@ function showLoader(loader) {
 function hideLoader(loader) {
   loader.classList.add('hidden-hero');
 }
-export { showLoadMoreNews, hideLoadMoreNews, showLoader, hideLoader };
+function showPreLoader(loadMoreBtn, preLoader) {
+  loadMoreBtn.disabled = true;
+  preLoader.classList.remove('hero-preload-hidden');
+}
+function hidePreLoader(loadMoreBtn, preLoader) {
+  loadMoreBtn.disabled = false;
+  preLoader.classList.add('hero-preload-hidden');
+}
+export {
+  showLoadMoreNews,
+  hideLoadMoreNews,
+  showLoader,
+  hideLoader,
+  showPreLoader,
+  hidePreLoader,
+};
