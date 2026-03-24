@@ -1,49 +1,49 @@
-import{a as y,i as l}from"./assets/vendor-db25513e.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const d of o.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&a(d)}).observe(document,{childList:!0,subtree:!0});function i(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(t){if(t.ep)return;t.ep=!0;const o=i(t);fetch(t.href,o)}})();const s={countrySelect:document.querySelector(".header__country-select"),topHeadlinesHero:document.querySelector(".hero__list"),loadMoreBtnHero:document.querySelector(".hero__load-more"),heroLoader:document.querySelector(".hero-loader"),heroPreLoader:document.querySelector(".hero-btn-loader"),headerBurgerBtn:document.querySelector(".header-burger__btn"),headerBurgerBtnClose:document.querySelector(".header-burger__btn-close")},c="/news-feed/assets/symbol-defs-cc70ba27.svg";function f(e,r){const i=r.map(({title:a,creator:t,description:o,pubDate:d,image_url:h})=>`<li class="hero__item">
+import{a as v,i as l}from"./assets/vendor-db25513e.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&n(c)}).observe(document,{childList:!0,subtree:!0});function i(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(t){if(t.ep)return;t.ep=!0;const s=i(t);fetch(t.href,s)}})();const o={countrySelect:document.querySelector(".header__country-select"),topHeadlinesHero:document.querySelector(".hero__list"),loadMoreBtnHero:document.querySelector(".hero__load-more"),heroLoader:document.querySelector(".hero-loader"),heroPreLoader:document.querySelector(".hero-btn-loader"),headerBurgerEl:document.querySelector(".header-burger"),headerBurgerBtn:document.querySelector(".header-burger__btn"),headerBurgerBtnClose:document.querySelector(".header-burger__btn-close")},d="/news-feed/assets/symbol-defs-cc70ba27.svg";function g(e,r){const i=r.map(({title:n,creator:t,description:s,pubDate:c,image_url:h})=>`<li class="hero__item">
                 <a href="#" class="hero__item-link">
                   <div>${h?`<div class="news-img-wrapper">
-        <img src="${h}" alt="News" style="width:100%; object-fit:cover; height:400px">
+        <img src="${h}" alt="News" style="width:100%; object-fit:cover;">
         <div class="news-fallback" style="display:none">
           <svg class="header__svg"  width="35" height="30">
-            <use href="${c}#icon-inbox-paper"></use>
+            <use href="${d}#icon-inbox-paper"></use>
           </svg>
         </div>
-     </div>`:`<div>
-                            <svg class="header__svg" width="35" height="30">
+     </div>`:`<div class="news-img-wrapper__svg-wrapper">
+                            <svg class="news-img-wrapper__svg" width="60" height="60">
                               <use
-                                href="${c}#icon-inbox-paper"
+                                href="${d}#icon-inbox-paper"
                               ></use>
                             </svg>
                           </div>`}</div>
                   <div class="hero__item-content">
                     <div class="hero__item-label">
-                      <span>
-                        <svg class="header__svg" width="35" height="30">
+                      <span class="hero__item-label-content">
+                        <svg  width="25" height="20">
                           <use
-                            href="${c}#icon-calendar"
+                            href="${d}#icon-calendar"
                           ></use>
                         </svg>
-                        <span>${new Date(d).toLocaleDateString()}</span>
+                        <span>${new Date(c).toLocaleDateString()}</span>
                       </span>
-                      <span>
-                        <svg class="header__svg" width="35" height="30">
-                          <use href="${c}#icon-user"></use>
+                      <span class="hero__item-label-content">
+                        <svg  width="25" height="20">
+                          <use href="${d}#icon-user"></use>
                         </svg>
                         <span>${t||"anon"}</span>
                       </span>
                     </div>
                     <div class="hero__item-text">
-                      <h3 class="hero__item-title">${a}</h3>
-                      <p class="hero__item-description">${o}</p>
+                      <h3 class="hero__item-title">${n}</h3>
+                      <p class="hero__item-description">${s}</p>
                     </div>
                   </div>
                 </a>
                 <button class="hero__item-btn" type="button">
                   <span>Read More</span>
-                  <svg class="header__svg" width="35" height="30">
+                  <svg class="header__svg" width="25" height="20">
                     <use
-                      href="${c}#icon-arrow-right"
+                      href="${d}#icon-arrow-right"
                     ></use>
                   </svg>
                 </button>
-              </li>`).join("");e.insertAdjacentHTML("beforeend",i)}const v="pub_fd056b01d6364d47ac3a6a4561f99d82",_="https://newsdata.io/api/1/latest";async function p({country:e,size:r,page:i,category:a="top"}){const t=await y.get(`${_}`,{params:{apikey:v,country:e,category:a,size:r,image:1,removeduplicate:1,page:i}});return console.log(t.data),t.data}function L(e,r){e.classList.remove("hidden-hero"),e.addEventListener("click",r)}function g(e,r){e.classList.add("hidden-hero"),e.removeEventListener("click",r)}function w(e){e.classList.remove("hidden-hero")}function b(e){e.classList.add("hidden-hero")}function H(e,r){e.disabled=!0,r.classList.remove("hero-preload-hidden")}function S(e,r){e.disabled=!1,r.classList.add("hero-preload-hidden")}const n={page:null,maxPage:0,country:"us",size:5};async function m(){w(s.heroLoader);try{const{results:e,nextPage:r}=await p(n);if(!e.length){n.country="us",l.error({title:"Error",message:"❌Sorry, there is no news from this country!"});return}n.page=r,s.topHeadlinesHero.innerHTML="",f(s.topHeadlinesHero,e),r?L(s.loadMoreBtnHero,u):g(s.loadMoreBtnHero,u)}catch(e){console.log(e),l.error({title:"Error",message:"❌Sorry, nothing was found for your request!"})}finally{b(s.heroLoader)}}s.countrySelect.addEventListener("change",P);async function P(e){n.country=e.target.value,n.page=null,m()}async function u(){H(s.loadMoreBtnHero,s.heroPreLoader);try{const{results:e,nextPage:r}=await p(n);f(s.topHeadlinesHero,e),n.page=r,r||(l.info({title:"Message",message:"You've reached the end of results"}),g(s.loadMoreBtnHero,u))}catch{}finally{S(s.loadMoreBtnHero,s.heroPreLoader)}}m();document.addEventListener("error",function(e){if(e.target.tagName==="IMG"){e.target.style.display="none";const r=e.target.nextElementSibling;r&&(r.style.display="flex")}},!0);
+              </li>`).join("");e.insertAdjacentHTML("beforeend",i)}const y="pub_fd056b01d6364d47ac3a6a4561f99d82",_="https://newsdata.io/api/1/latest";async function f({country:e,size:r,page:i,category:n="top"}){const t=await v.get(`${_}`,{params:{apikey:y,country:e,category:n,size:r,image:1,removeduplicate:1,page:i}});return console.log(t.data),t.data}function L(e,r){e.classList.remove("hidden-hero"),e.addEventListener("click",r)}function p(e,r){e.classList.add("hidden-hero"),e.removeEventListener("click",r)}function w(e){e.classList.remove("hidden-hero")}function b(e){e.classList.add("hidden-hero")}function B(e,r){e.disabled=!0,r.classList.remove("hero-preload-hidden")}function H(e,r){e.disabled=!1,r.classList.add("hero-preload-hidden")}const a={page:null,maxPage:0,country:"us",size:5};async function m(){w(o.heroLoader);try{const{results:e,nextPage:r}=await f(a);if(!e.length){a.country="us",l.error({title:"Error",message:"❌Sorry, there is no news from this country!"});return}a.page=r,o.topHeadlinesHero.innerHTML="",g(o.topHeadlinesHero,e),r?L(o.loadMoreBtnHero,u):p(o.loadMoreBtnHero,u)}catch(e){console.log(e),l.error({title:"Error",message:"❌Sorry, nothing was found for your request!"})}finally{b(o.heroLoader)}}o.countrySelect.addEventListener("change",S);async function S(e){a.country=e.target.value,a.page=null,m()}async function u(){B(o.loadMoreBtnHero,o.heroPreLoader);try{const{results:e,nextPage:r}=await f(a);g(o.topHeadlinesHero,e),a.page=r,r||(l.info({title:"Message",message:"You've reached the end of results"}),p(o.loadMoreBtnHero,u))}catch{}finally{H(o.loadMoreBtnHero,o.heroPreLoader)}}function E(e){e.target!==e.currentTarget&&o.headerBurgerEl.classList.remove("active"),o.headerBurgerEl.classList.add("active")}function M(e){o.headerBurgerEl.classList.remove("active")}m();o.headerBurgerBtn.addEventListener("click",E);o.headerBurgerBtnClose.addEventListener("click",M);document.addEventListener("error",function(e){if(e.target.tagName==="IMG"){e.target.style.display="none";const r=e.target.nextElementSibling;r&&(r.style.display="flex")}},!0);
 //# sourceMappingURL=commonHelpers.js.map
