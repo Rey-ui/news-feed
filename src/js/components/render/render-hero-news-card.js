@@ -8,15 +8,15 @@ function markupHeroNewsCard(listEl, news) {
                   <div>${
                     image_url
                       ? `<div class="news-img-wrapper">
-        <img src="${image_url}" alt="News" style="width:100%; object-fit:cover; height:400px">
+        <img src="${image_url}" alt="News" style="width:100%; object-fit:cover;">
         <div class="news-fallback" style="display:none">
           <svg class="header__svg"  width="35" height="30">
             <use href="${spritePath}#icon-inbox-paper"></use>
           </svg>
         </div>
      </div>`
-                      : `<div>
-                            <svg class="header__svg" width="35" height="30">
+                      : `<div class="news-img-wrapper__svg-wrapper">
+                            <svg class="news-img-wrapper__svg" width="60" height="60">
                               <use
                                 href="${spritePath}#icon-inbox-paper"
                               ></use>
@@ -25,16 +25,16 @@ function markupHeroNewsCard(listEl, news) {
                   }</div>
                   <div class="hero__item-content">
                     <div class="hero__item-label">
-                      <span>
-                        <svg class="header__svg" width="35" height="30">
+                      <span class="hero__item-label-content">
+                        <svg  width="25" height="20">
                           <use
                             href="${spritePath}#icon-calendar"
                           ></use>
                         </svg>
                         <span>${new Date(pubDate).toLocaleDateString()}</span>
                       </span>
-                      <span>
-                        <svg class="header__svg" width="35" height="30">
+                      <span class="hero__item-label-content">
+                        <svg  width="25" height="20">
                           <use href="${spritePath}#icon-user"></use>
                         </svg>
                         <span>${creator || 'anon'}</span>
@@ -48,7 +48,7 @@ function markupHeroNewsCard(listEl, news) {
                 </a>
                 <button class="hero__item-btn" type="button">
                   <span>Read More</span>
-                  <svg class="header__svg" width="35" height="30">
+                  <svg class="header__svg" width="25" height="20">
                     <use
                       href="${spritePath}#icon-arrow-right"
                     ></use>

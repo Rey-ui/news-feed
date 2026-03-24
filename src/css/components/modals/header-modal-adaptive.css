@@ -1,0 +1,51 @@
+/* ==========header======min-width: 768px================ */
+@media screen and (min-width: 768px) {
+  .header-burger {
+    overflow: hidden;
+  }
+  .header-burger.active {
+    min-width: 350px;
+    overflow: hidden;
+  }
+  .header-burger__btn-close {
+    width: 18px;
+    height: 18px;
+  }
+  .header-burger__btn-close svg {
+    width: 18px;
+    height: 18px;
+    stroke: none;
+  }
+  .header-burger__list {
+    padding: 40px;
+
+    margin-top: 55px;
+
+    width: 100%;
+
+    min-height: 100%;
+    min-height: 812px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .header-burger__item {
+    font-size: 18px;
+  }
+}
+/* ==========header=====min-width: 1440px================= */
+@media screen and (min-width: 1440px) {
+  .header-burger {
+    position: absolute;
+    display: none;
+    background: var(--card-bg-color);
+    visibility: hidden;
+    /* display: none; */
+    opacity: 0;
+    top: 0;
+    right: 0;
+    z-index: 5000;
+    pointer-events: none;
+    transform: translateX(100%);
+  }
+}

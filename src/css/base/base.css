@@ -29,9 +29,13 @@ body {
 }
 .container {
   margin: 0 auto;
-  padding: 0 15px;
-  max-width: 375px;
+  padding: 0 16px;
+  max-width: 390px;
 }
+.section {
+  padding: 25px 0;
+}
+
 .hero__item-title {
   text-transform: initial;
   display: -webkit-box;

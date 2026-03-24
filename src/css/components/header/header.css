@@ -1,4 +1,4 @@
-@import url('../base/root.css');
+@import url('../../base/root.css');
 
 .header__svg {
   stroke: none;
@@ -56,8 +56,10 @@
 .header__svg {
 }
 .header__nav {
+  position: relative;
 }
 .header__list {
+  display: none;
 }
 .header__item {
 }

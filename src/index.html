@@ -35,7 +35,7 @@
             </select>
           </div>
           <nav class="header__nav">
-            <ul class="header__list hidden-hero">
+            <ul class="header__list">
               <li class="header__item">
                 <a href="" class="header__item-link">Top Stories</a>
               </li>
@@ -51,7 +51,7 @@
                 <use href="./img/svg/symbol-defs.svg#icon-burger"></use>
               </svg>
             </button>
-            <div class="header-burger hidden-hero">
+            <div class="header-burger">
               <button type="button" class="header-burger__btn-close">
                 <svg class="header__svg" width="35" height="30">
                   <use href="./img/svg/symbol-defs.svg#icon-close"></use>
@@ -76,10 +76,20 @@
     <main class="main">
       <section class="section hero">
         <div class="container">
-          <h1 class="hero__title">Today's Headlines: Stay Informed</h1>
+          <div class="hero__up">
+            <h1 class="hero__title">Today's Headlines: Stay Informed</h1>
+            <p class="hero__text">
+              Explore the latest news from around the world. We bring you
+              up-to-the-minute updates on the most significant events, trends,
+              and stories. Discover the world through our news coverage.
+            </p>
+          </div>
+
           <div class="hero__content">
-            <div class="hero-loader"></div>
-            <ul class="hero__list"></ul>
+            <div class="hero__list-container">
+              <div class="hero-loader"></div>
+              <ul class="hero__list"></ul>
+            </div>
             <button class="hero__load-more" type="button">
               <div class="hero-btn-loader hero-preload-hidden"></div>
               <span>Load More</span>

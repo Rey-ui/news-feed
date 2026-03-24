@@ -5,7 +5,7 @@
   --main-bg-color: #141414;
 
   --card-bg-color: #191919;
-
+  --bg-hover: #262626;
   --card-border-color: #858585;
   --description-border-radius: 100px;
   --card-border-radius: 12px;
@@ -13,5 +13,7 @@
   --text-general: 16px;
   --text-small: 14px;
   --text-big: 18px;
-  --title-h3-text: 20px;
+  --title-h3-text-mob: 20px;
+  --title-h3-text-tab: 22px;
+  --title-h3-text-desk: 24px;
 }

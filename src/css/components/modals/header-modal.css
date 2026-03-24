@@ -1,0 +1,59 @@
+.header-burger {
+  position: absolute;
+  background: var(--card-bg-color);
+  visibility: hidden;
+  /* display: none; */
+  opacity: 0;
+  top: 0;
+  right: 0;
+  z-index: 5000;
+  pointer-events: none;
+  transform: translateX(100%);
+  display: none;
+  transition: all 500ms;
+}
+
+.header-burger.active {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+.header-burger__btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 15px;
+  height: 15px;
+  background-color: inherit;
+}
+.header-burger__btn-close svg {
+  width: 15px;
+  height: 15px;
+  stroke: none;
+}
+.header-burger__list {
+  padding: 40px;
+  margin: 0 auto;
+  margin-top: 50px;
+  /* max-width: 50%; */
+  min-width: 200px;
+  width: 100%;
+
+  min-height: 100%;
+  min-height: 812px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.header-burger__item {
+  font-size: 18px;
+}
+.header-burger__item-link {
+  color: var(--main-text-color);
+  transition: all 250ms;
+}
+.header-burger__item-link:hover {
+  color: var(--main-accent-color);
+}

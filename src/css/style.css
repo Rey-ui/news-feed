@@ -1,8 +1,13 @@
 @import url('./base/reset.css');
 /* @import url('./loaders/loader.css'); */
 @import url('./base/base.css');
-@import url('./base/loader.css');
-@import url('./components/header.css');
+@import url('./components/loaders/loader.css');
+@import url('./components/header/header.css');
+@import url('./components/modals/header-modal.css');
+@import url('./components/header/header-adaptive.css');
+@import url('./components/modals/header-modal-adaptive.css');
+@import url('./components/hero/hero.css');
+@import url('./base/adaptive.css');
 /* .wrapper {
   margin: 0 auto;
   margin-top: 20px;
@@ -10,18 +15,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   gap: 20px;
 } */
 
 /* .container {
-
   max-width: 768px;
 }
 .container {
-
   max-width: 1440px;
 } */
-.section {
-  padding: 25px 0;
-}
