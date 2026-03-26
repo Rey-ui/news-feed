@@ -35,18 +35,3 @@ body {
 .section {
   padding: 25px 0;
 }
-
-.hero__item-title {
-  text-transform: initial;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-}
-.hero__item-description {
-  text-transform: initial;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-}

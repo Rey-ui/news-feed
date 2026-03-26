@@ -17,11 +17,17 @@ const heroQueryParams = {
   country: 'us',
   size: 5,
 };
-
+const newsStore = {
+  hero: [],
+  latest: [],
+  trending: [],
+};
 async function handleSearchTopHedlinesNews() {
   showLoader(refs.heroLoader);
   try {
     const { results, nextPage } = await searchTopHeadlinesNews(heroQueryParams);
+    newsStore.hero.push(...results);
+    console.log(newsStore.hero);
     if (!results.length) {
       heroQueryParams.country = 'us';
       iziToast.error({
@@ -32,7 +38,7 @@ async function handleSearchTopHedlinesNews() {
     }
     heroQueryParams.page = nextPage;
     refs.topHeadlinesHero.innerHTML = '';
-    markupHeroNewsCard(refs.topHeadlinesHero, results);
+    markupHeroNewsCard(refs.topHeadlinesHero, newsStore.hero);
     if (nextPage) {
       showLoadMoreNews(refs.loadMoreBtnHero, handleLoadMoreHeroNews);
     } else {
@@ -49,19 +55,19 @@ async function handleSearchTopHedlinesNews() {
   }
 }
 refs.countrySelect.addEventListener('change', getSelect);
-
 async function getSelect(e) {
   heroQueryParams.country = e.target.value;
   heroQueryParams.page = null;
+  newsStore.hero = [];
   handleSearchTopHedlinesNews();
 }
-
+// console.log(handleSearchTopHedlinesNews());
 async function handleLoadMoreHeroNews() {
   showPreLoader(refs.loadMoreBtnHero, refs.heroPreLoader);
   try {
     const { results, nextPage } = await searchTopHeadlinesNews(heroQueryParams);
-
-    markupHeroNewsCard(refs.topHeadlinesHero, results);
+    newsStore.hero.push(...results);
+    markupHeroNewsCard(refs.topHeadlinesHero, newsStore.hero);
 
     heroQueryParams.page = nextPage;
 
@@ -78,5 +84,15 @@ async function handleLoadMoreHeroNews() {
     hidePreLoader(refs.loadMoreBtnHero, refs.heroPreLoader);
   }
 }
+refs.topHeadlinesHero.addEventListener('click', onNewsClick);
 
+function onNewsClick(e) {
+  const card = e.target.closest('.hero__item');
+  if (!card) return;
+  const id = card.dataset.id;
+  const newsItem = newsStore.hero.find(item => item.article_id === id);
+
+  console.log(newsItem);
+}
+console.log(newsStore.hero);
 export { handleSearchTopHedlinesNews };

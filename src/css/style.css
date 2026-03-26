@@ -7,6 +7,7 @@
 @import url('./components/header/header-adaptive.css');
 @import url('./components/modals/header-modal-adaptive.css');
 @import url('./components/hero/hero.css');
+@import url('./components/hero/hero-adaptive.css');
 @import url('./base/adaptive.css');
 /* .wrapper {
   margin: 0 auto;
