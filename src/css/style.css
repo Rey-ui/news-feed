@@ -3,11 +3,13 @@
 @import url('./base/base.css');
 @import url('./components/loaders/loader.css');
 @import url('./components/header/header.css');
-@import url('./components/modals/header-modal.css');
+@import url('./components/modals/header-modal/header-modal.css');
 @import url('./components/header/header-adaptive.css');
-@import url('./components/modals/header-modal-adaptive.css');
+@import url('./components/modals/header-modal//header-modal-adaptive.css');
 @import url('./components/hero/hero.css');
 @import url('./components/hero/hero-adaptive.css');
+@import url('./components/modals/news-card-modal/news-card-modal.css');
+@import url('./components/modals/news-card-modal/news-card-modal-adaptive.css');
 @import url('./base/adaptive.css');
 /* .wrapper {
   margin: 0 auto;

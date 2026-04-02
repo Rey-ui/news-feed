@@ -7,4 +7,10 @@ export const refs = {
   headerBurgerEl: document.querySelector('.header-burger'),
   headerBurgerBtn: document.querySelector('.header-burger__btn'),
   headerBurgerBtnClose: document.querySelector('.header-burger__btn-close'),
+  newsModal: document.querySelector('.news-modal'),
+};
+export const newsStore = {
+  hero: [],
+  latest: [],
+  trending: [],
 };

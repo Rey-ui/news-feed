@@ -36,7 +36,8 @@
 // }
 
 // handleSearchTopHedlinesNews();
-
+import { refs } from '../../services/refs.js';
+import markupModalNews from '../render/render-modal-news.js';
 function showLoadMoreNews(loadMorebtn, handleLoadMore) {
   loadMorebtn.classList.remove('hidden-hero');
   loadMorebtn.addEventListener('click', handleLoadMore);
@@ -59,6 +60,37 @@ function hidePreLoader(loadMoreBtn, preLoader) {
   loadMoreBtn.disabled = false;
   preLoader.classList.add('hero-preload-hidden');
 }
+function onNewsClick(e, news, item) {
+  const card = e.target.closest(item);
+  if (!card) return;
+  const id = card.dataset.id;
+  const newsItem = news.find(item => item.article_id === id);
+  openNewsModal(newsItem);
+  console.log(newsItem);
+}
+function handleEscapeKeyPress(event) {
+  if (event.code === 'Escape') {
+    closeNewsModal();
+  }
+}
+
+function openNewsModal(news) {
+  refs.newsModal.classList.remove('hidden-hero');
+  refs.newsModal.innerHTML = markupModalNews(news);
+  document.body.style.overflow = 'hidden';
+  const btnClose = refs.newsModal.querySelector('.news-modal__close-btn');
+
+  btnClose.addEventListener('click', () => {
+    closeNewsModal();
+  });
+  window.addEventListener('keydown', handleEscapeKeyPress);
+}
+function closeNewsModal() {
+  refs.newsModal.classList.add('hidden-hero');
+  document.body.style.overflow = '';
+  refs.newsModal.innerHTML = '';
+  window.removeEventListener('keydown', handleEscapeKeyPress);
+}
 export {
   showLoadMoreNews,
   hideLoadMoreNews,
@@ -66,4 +98,5 @@ export {
   hideLoader,
   showPreLoader,
   hidePreLoader,
+  onNewsClick,
 };

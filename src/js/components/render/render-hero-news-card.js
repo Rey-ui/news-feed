@@ -42,7 +42,7 @@ function markupHeroNewsCard(listEl, news) {
                     </div>
                     <div class="hero__item-text">
                       <h3 class="hero__item-title">${title}</h3>
-                      <p class="hero__item-description">${description}</p>
+                      <p class="hero__item-description">${description ? description : 'there are no details on this post...'}</p>
                     </div>
                     <button class="hero__item-btn" type="button">
                   <span>Read More</span>
