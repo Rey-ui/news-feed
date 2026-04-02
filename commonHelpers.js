@@ -1,16 +1,16 @@
-import{a as _,i as u}from"./assets/vendor-db25513e.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const d of s.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&n(d)}).observe(document,{childList:!0,subtree:!0});function i(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(t){if(t.ep)return;t.ep=!0;const s=i(t);fetch(t.href,s)}})();const o={countrySelect:document.querySelector(".header__country-select"),topHeadlinesHero:document.querySelector(".hero__list"),loadMoreBtnHero:document.querySelector(".hero__load-more"),heroLoader:document.querySelector(".hero-loader"),heroPreLoader:document.querySelector(".hero-btn-loader"),headerBurgerEl:document.querySelector(".header-burger"),headerBurgerBtn:document.querySelector(".header-burger__btn"),headerBurgerBtnClose:document.querySelector(".header-burger__btn-close")},l="/news-feed/assets/symbol-defs-cc70ba27.svg";function f(e,r){const i=r.map(({article_id:n,title:t,creator:s,description:d,pubDate:y,image_url:g})=>`<li data-id="${n}" class="hero__item">
+import{a as L,i as g}from"./assets/vendor-db25513e.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))n(o);new MutationObserver(o=>{for(const t of o)if(t.type==="childList")for(const a of t.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&n(a)}).observe(document,{childList:!0,subtree:!0});function i(o){const t={};return o.integrity&&(t.integrity=o.integrity),o.referrerPolicy&&(t.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?t.credentials="include":o.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function n(o){if(o.ep)return;o.ep=!0;const t=i(o);fetch(o.href,t)}})();const r={countrySelect:document.querySelector(".header__country-select"),topHeadlinesHero:document.querySelector(".hero__list"),loadMoreBtnHero:document.querySelector(".hero__load-more"),heroLoader:document.querySelector(".hero-loader"),heroPreLoader:document.querySelector(".hero-btn-loader"),headerBurgerEl:document.querySelector(".header-burger"),headerBurgerBtn:document.querySelector(".header-burger__btn"),headerBurgerBtnClose:document.querySelector(".header-burger__btn-close"),newsModal:document.querySelector(".news-modal")},l={hero:[],latest:[],trending:[]},d="/news-feed/assets/symbol-defs-cc70ba27.svg";function v(e,s){const i=s.map(({article_id:n,title:o,creator:t,description:a,pubDate:h,image_url:u})=>`<li data-id="${n}" class="hero__item">
                 
-                  ${g?`<div class="news-img-wrapper">
-        <img src="${g}" alt="News" style=" object-fit:cover;">
+                  ${u?`<div class="news-img-wrapper">
+        <img src="${u}" alt="News" style=" object-fit:cover;">
         <div class="news-fallback" style="display:none">
           <svg class="header__svg"  width="35" height="30">
-            <use href="${l}#icon-inbox-paper"></use>
+            <use href="${d}#icon-inbox-paper"></use>
           </svg>
         </div>
      </div>`:`<div class="news-img-wrapper__svg-wrapper">
                             <svg class="news-img-wrapper__svg" width="60" height="60">
                               <use
-                                href="${l}#icon-inbox-paper"
+                                href="${d}#icon-inbox-paper"
                               ></use>
                             </svg>
                           </div>`}
@@ -19,30 +19,84 @@ import{a as _,i as u}from"./assets/vendor-db25513e.js";(function(){const r=docum
                       <span class="hero__item-label-content">
                         <svg  width="25" height="20">
                           <use
-                            href="${l}#icon-calendar"
+                            href="${d}#icon-calendar"
                           ></use>
                         </svg>
-                        <span>${new Date(y).toLocaleDateString()}</span>
+                        <span>${new Date(h).toLocaleDateString()}</span>
                       </span>
                       <span class="hero__item-label-content">
                         <svg  width="25" height="20">
-                          <use href="${l}#icon-user"></use>
+                          <use href="${d}#icon-user"></use>
                         </svg>
-                        <span>${s||"anon"}</span>
+                        <span>${t||"anon"}</span>
                       </span>
                     </div>
                     <div class="hero__item-text">
-                      <h3 class="hero__item-title">${t}</h3>
-                      <p class="hero__item-description">${d}</p>
+                      <h3 class="hero__item-title">${o}</h3>
+                      <p class="hero__item-description">${a||"there are no details on this post..."}</p>
                     </div>
                     <button class="hero__item-btn" type="button">
                   <span>Read More</span>
                   <svg class="header__svg" width="25" height="20">
                     <use
-                      href="${l}#icon-arrow-right"
+                      href="${d}#icon-arrow-right"
                     ></use>
                   </svg>
                 </button>
                   </div>
-              </li>`).join("");e.insertAdjacentHTML("beforeend",i)}const L="pub_fd056b01d6364d47ac3a6a4561f99d82",w="https://newsdata.io/api/1/latest";async function p({country:e,size:r,page:i,category:n="top"}){const t=await _.get(`${w}`,{params:{apikey:L,country:e,category:n,size:r,image:1,removeduplicate:1,page:i}});return console.log(t.data),t.data}function b(e,r){e.classList.remove("hidden-hero"),e.addEventListener("click",r)}function m(e,r){e.classList.add("hidden-hero"),e.removeEventListener("click",r)}function H(e){e.classList.remove("hidden-hero")}function B(e){e.classList.add("hidden-hero")}function S(e,r){e.disabled=!0,r.classList.remove("hero-preload-hidden")}function E(e,r){e.disabled=!1,r.classList.add("hero-preload-hidden")}const c={page:null,maxPage:0,country:"us",size:5},a={hero:[],latest:[],trending:[]};async function v(){H(o.heroLoader);try{const{results:e,nextPage:r}=await p(c);if(a.hero.push(...e),console.log(a.hero),!e.length){c.country="us",u.error({title:"Error",message:"❌Sorry, there is no news from this country!"});return}c.page=r,o.topHeadlinesHero.innerHTML="",f(o.topHeadlinesHero,a.hero),r?b(o.loadMoreBtnHero,h):m(o.loadMoreBtnHero,h)}catch(e){console.log(e),u.error({title:"Error",message:"❌Sorry, nothing was found for your request!"})}finally{B(o.heroLoader)}}o.countrySelect.addEventListener("change",M);async function M(e){c.country=e.target.value,c.page=null,a.hero=[],v()}async function h(){S(o.loadMoreBtnHero,o.heroPreLoader);try{const{results:e,nextPage:r}=await p(c);a.hero.push(...e),f(o.topHeadlinesHero,a.hero),c.page=r,r||(u.info({title:"Message",message:"You've reached the end of results"}),m(o.loadMoreBtnHero,h))}catch{}finally{E(o.loadMoreBtnHero,o.heroPreLoader)}}o.topHeadlinesHero.addEventListener("click",P);function P(e){const r=e.target.closest(".hero__item");if(!r)return;const i=r.dataset.id,n=a.hero.find(t=>t.article_id===i);console.log(n)}console.log(a.hero);function $(e){e.target!==e.currentTarget&&o.headerBurgerEl.classList.remove("active"),o.headerBurgerEl.classList.add("active")}function N(e){o.headerBurgerEl.classList.remove("active")}v();o.headerBurgerBtn.addEventListener("click",$);o.headerBurgerBtnClose.addEventListener("click",N);document.addEventListener("error",function(e){if(e.target.tagName==="IMG"){e.target.style.display="none";const r=e.target.nextElementSibling;r&&(r.style.display="flex")}},!0);
+              </li>`).join("");e.insertAdjacentHTML("beforeend",i)}const b="pub_fd056b01d6364d47ac3a6a4561f99d82",$="https://newsdata.io/api/1/latest";async function m({country:e,size:s,page:i,category:n="top"}){const o=await L.get(`${$}`,{params:{apikey:b,country:e,category:n,size:s,image:1,removeduplicate:1,page:i}});return console.log(o.data),o.data}function M({title:e,image_url:s,pubDate:i,creator:n,category:o,language:t,description:a,link:h}){return`<div class="news-modal__container">
+            <button class="news-modal__close-btn"><svg class="header__svg" width="15" height="15">
+                  <use href="./img/svg/symbol-defs.svg#icon-close"></use>
+                </svg></button>
+            <h3 class="news-modal__title">${e}</h3>
+            <div class="news-modal__content">
+                ${s?`
+                <div class="news-modal__news-img-wrapper">
+                    <img src="${s}" alt="News" style="object-fit: cover" />
+                    <div class="news-modal__news-fallback" style="display: none">
+                    <svg class="header__svg" width="35" height="30">
+                        <use href="${d}#icon-inbox-paper"></use>
+                    </svg>
+                    </div>
+                </div>
+                `:`
+                <div class="news-modal__news-img-wrapper__svg-wrapper">
+                    <svg
+                    class="news-modal__news-img-wrapper__svg"
+                    width="60"
+                    height="60"
+                    >
+                    <use href="${d}#icon-inbox-paper"></use>
+                    </svg>
+                </div>
+                `}
+                <div class="news-modal__main-info">
+                    <div class="news-modal__label">
+                    <div class="news-modal__label-content">
+                        <span class="news-modal__label-text">
+                        <svg width="25" height="20">
+                            <use href="${d}#icon-calendar"></use>
+                        </svg>
+                        <span>${new Date(i).toLocaleDateString()}</span>
+                        </span>
+                        <span class="news-modal__label-text">
+                        <svg width="25" height="20">
+                            <use href="${d}#icon-user"></use>
+                        </svg>
+                        <span>${n||"anon"}</span>
+                        </span>
+                    </div>
+                    <div class="news-modal__label-category">
+                        ${o.map(u=>`<span>${u}</span>`).join(" ")}
+                    </div>
+                    <div class="news-modal__label-lang">
+                        <span>Lang:</span>${t}
+                    </div>
+                    </div>
+                    <p class="news-modal__description">${a||"there are no details on this post..."}</p>
+                </div>
+                <a href="${h}" class="news-modal__link"
+                    >Link to the original source: <span>${h}</span></a>
+            </div>
+      </div>`}function H(e,s){e.classList.remove("hidden-hero"),e.addEventListener("click",s)}function f(e,s){e.classList.add("hidden-hero"),e.removeEventListener("click",s)}function E(e){e.classList.remove("hidden-hero")}function S(e){e.classList.add("hidden-hero")}function B(e,s){e.disabled=!0,s.classList.remove("hero-preload-hidden")}function N(e,s){e.disabled=!1,s.classList.add("hero-preload-hidden")}function P(e,s,i){const n=e.target.closest(i);if(!n)return;const o=n.dataset.id,t=s.find(a=>a.article_id===o);x(t),console.log(t)}function w(e){e.code==="Escape"&&_()}function x(e){r.newsModal.classList.remove("hidden-hero"),r.newsModal.innerHTML=M(e),document.body.style.overflow="hidden",r.newsModal.querySelector(".news-modal__close-btn").addEventListener("click",()=>{_()}),window.addEventListener("keydown",w)}function _(){r.newsModal.classList.add("hidden-hero"),document.body.style.overflow="",r.newsModal.innerHTML="",window.removeEventListener("keydown",w)}const c={page:null,maxPage:0,country:"us",size:5};async function y(){E(r.heroLoader);try{const{results:e,nextPage:s}=await m(c);if(l.hero.push(...e),console.log(l.hero),!e.length){c.country="us",g.error({title:"Error",message:"❌Sorry, there is no news from this country!"});return}c.page=s,r.topHeadlinesHero.innerHTML="",v(r.topHeadlinesHero,l.hero),s?H(r.loadMoreBtnHero,p):f(r.loadMoreBtnHero,p)}catch(e){console.log(e),g.error({title:"Error",message:"❌Sorry, nothing was found for your request!"})}finally{S(r.heroLoader)}}r.countrySelect.addEventListener("change",k);async function k(e){c.country=e.target.value,c.page=null,l.hero=[],y()}async function p(){B(r.loadMoreBtnHero,r.heroPreLoader);try{const{results:e,nextPage:s}=await m(c);l.hero.push(...e),v(r.topHeadlinesHero,l.hero),c.page=s,s||(g.info({title:"Message",message:"You've reached the end of results"}),f(r.loadMoreBtnHero,p))}catch{}finally{N(r.loadMoreBtnHero,r.heroPreLoader)}}console.log(l.hero);function q(e){e.target!==e.currentTarget&&r.headerBurgerEl.classList.remove("active"),r.headerBurgerEl.classList.add("active")}function T(e){r.headerBurgerEl.classList.remove("active")}y();r.headerBurgerBtn.addEventListener("click",q);r.headerBurgerBtnClose.addEventListener("click",T);r.topHeadlinesHero.addEventListener("click",e=>{P(e,l.hero,".hero__item")});document.addEventListener("error",function(e){if(e.target.tagName==="IMG"){e.target.style.display="none";const s=e.target.nextElementSibling;s&&(s.style.display="flex")}},!0);
 //# sourceMappingURL=commonHelpers.js.map
