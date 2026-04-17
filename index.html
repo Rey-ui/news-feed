@@ -9,7 +9,7 @@
     <script type="module" crossorigin src="/news-feed/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/news-feed/assets/vendor-db25513e.js">
     <link rel="stylesheet" href="/news-feed/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/news-feed/assets/index-ed74b0dc.css">
+    <link rel="stylesheet" href="/news-feed/assets/index-803ac253.css">
   </head>
   <body>
     <header class="header">
@@ -98,6 +98,162 @@
               <div class="hero-btn-loader hero-preload-hidden"></div>
               <span>Load More</span>
             </button>
+          </div>
+        </div>
+      </section>
+      <section class="section news-search">
+        <div class="container">
+          <h2 class="news-search__title title">
+            Discover the World of Headlines and Searching
+          </h2>
+          <div class="news-search__content">
+            <form action="" class="news-search__form search-form">
+              <div class="search-form__search">
+                <input
+                  type="text"
+                  name="searchInput"
+                  placeholder="Enter your query..."
+                  class="search-form__input"
+                />
+                <div class="search-form__country">
+                  <div class="search-form__country-title">
+                    <svg
+                      class="search-form__svg-country"
+                      width="35"
+                      height="30"
+                    >
+                      <use href="/news-feed/assets/symbol-defs-cc70ba27.svg#icon-globe"></use>
+                    </svg>
+                    <span>Country:</span>
+                  </div>
+                  <select
+                    class="search-form__country-select"
+                    name="formCountrySelect"
+                  >
+                    <option value="us" selected>England/USA</option>
+                    <option value="de">Deutschland</option>
+                    <option value="es">España</option>
+                    <option value="it">Italia</option>
+                    <option value="fr">France</option>
+                    <option value="cn">China</option>
+                    <option value="sv">Sverige</option>
+                  </select>
+                </div>
+              </div>
+              <div class="search-form__categories">
+                <label class="search-form__category-label">
+                  <input
+                    class="search-form__category"
+                    type="radio"
+                    name="categoryRadio"
+                    value="top"
+                    checked
+                  />
+                  <div class="search-form__category-text">
+                    <svg class="search-form__svg" width="35" height="30">
+                      <use href="/news-feed/assets/symbol-defs-cc70ba27.svg#icon-globe"></use>
+                    </svg>
+                    <span>Top</span>
+                  </div>
+                </label>
+                <label class="search-form__category-label">
+                  <input
+                    class="search-form__category"
+                    type="radio"
+                    name="categoryRadio"
+                    value="politics"
+                  />
+                  <div class="search-form__category-text">
+                    <svg class="search-form__svg" width="35" height="30">
+                      <use
+                        href="/news-feed/assets/symbol-defs-cc70ba27.svg#icon-briefcase"
+                      ></use>
+                    </svg>
+                    <span>Politics</span>
+                  </div>
+                </label>
+                <label class="search-form__category-label">
+                  <input
+                    class="search-form__category"
+                    type="radio"
+                    name="categoryRadio"
+                    value="sports"
+                  />
+                  <div class="search-form__category-text">
+                    <svg class="search-form__svg" width="35" height="30">
+                      <use href="/news-feed/assets/symbol-defs-cc70ba27.svg#icon-trophy"></use>
+                    </svg>
+                    <span>Sports</span>
+                  </div>
+                </label>
+                <label class="search-form__category-label">
+                  <input
+                    class="search-form__category"
+                    type="radio"
+                    name="categoryRadio"
+                    value="health"
+                  />
+                  <div class="search-form__category-text">
+                    <svg class="search-form__svg" width="35" height="30">
+                      <use href="/news-feed/assets/symbol-defs-cc70ba27.svg#icon-health"></use>
+                    </svg>
+                    <span>Health</span>
+                  </div>
+                </label>
+                <label class="search-form__category-label">
+                  <input
+                    class="search-form__category"
+                    type="radio"
+                    name="categoryRadio"
+                    value="business"
+                  />
+                  <div class="search-form__category-text">
+                    <svg class="search-form__svg" width="35" height="30">
+                      <use href="/news-feed/assets/symbol-defs-cc70ba27.svg#icon-stats"></use>
+                    </svg>
+                    <span>Business</span>
+                  </div>
+                </label>
+                <label class="search-form__category-label">
+                  <input
+                    class="search-form__category"
+                    type="radio"
+                    name="categoryRadio"
+                    value="technology"
+                  />
+                  <div class="search-form__category-text">
+                    <svg class="search-form__svg" width="35" height="30">
+                      <use href="/news-feed/assets/symbol-defs-cc70ba27.svg#icon-cpu"></use>
+                    </svg>
+                    <span>Technology</span>
+                  </div>
+                </label>
+              </div>
+              <div class="search-form__btns">
+                <button
+                  class="search-form__btn search-form__btn-clear"
+                  name="clearBtn"
+                  type="button"
+                >
+                  Clear All</button
+                ><button
+                  class="search-form__btn search-form__btn-sub"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
+            <div class="news-search__main">
+              <div class="news-search__list-container">
+                <div class="news-search__loader"></div>
+                <ul class="news-search__list"></ul>
+              </div>
+              <button class="news-search__load-more" type="button">
+                <div class="news-search__btn-loader hero-preload-hidden"></div>
+                <span>Load More</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
