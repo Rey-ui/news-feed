@@ -63,7 +63,7 @@ async function handleLoadMoreHeroNews() {
   try {
     const { results, nextPage } = await searchTopHeadlinesNews(heroQueryParams);
     newsStore.hero.push(...results);
-    markupHeroNewsCard(refs.topHeadlinesHero, newsStore.hero);
+    markupHeroNewsCard(refs.topHeadlinesHero, results);
 
     heroQueryParams.page = nextPage;
 

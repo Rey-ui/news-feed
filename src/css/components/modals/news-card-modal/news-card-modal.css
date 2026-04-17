@@ -6,7 +6,7 @@
   margin: 0 auto;
   height: 100%;
 
-  background: rgba(0, 0, 0, 0.2); /* затемнение */
+  background: rgba(0, 0, 0, 0.6); /* затемнение */
   padding: 16px;
   display: flex;
   justify-content: center;
@@ -39,6 +39,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
+  padding: 10px;
 }
 .news-modal__title {
   font-size: var(--title-h3-text-mob);
@@ -152,9 +153,14 @@
   flex-direction: column;
   gap: 15px;
   font-size: var(--text-general);
+  transition: all 250ms;
 }
 .news-modal__link span {
   font-size: var(--text-small);
   color: var(--description-text-color);
   text-decoration: underline;
+  transition: all 250ms;
+}
+.news-modal__link:hover span {
+  color: var(--main-accent-color);
 }

@@ -17,6 +17,9 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
+body {
+  overflow-x: hidden;
+}
 .hidden-hero {
   display: none;
 }

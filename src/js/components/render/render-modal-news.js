@@ -12,7 +12,7 @@ function markupModalNews({
 }) {
   return `<div class="news-modal__container">
             <button class="news-modal__close-btn"><svg class="header__svg" width="15" height="15">
-                  <use href="./img/svg/symbol-defs.svg#icon-close"></use>
+                  <use href="${spritePath}#icon-close"></use>
                 </svg></button>
             <h3 class="news-modal__title">${title}</h3>
             <div class="news-modal__content">
@@ -69,7 +69,7 @@ function markupModalNews({
                     </div>
                     <p class="news-modal__description">${description ? description : 'there are no details on this post...'}</p>
                 </div>
-                <a href="${link}" class="news-modal__link"
+                <a href="${link}" target="_blank" class="news-modal__link"
                     >Link to the original source: <span>${link}</span></a>
             </div>
       </div>`;

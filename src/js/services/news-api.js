@@ -6,6 +6,7 @@ async function searchTopHeadlinesNews({
   size,
   page,
   category = 'top',
+  q = null,
 }) {
   const response = await axios.get(`${BASE_URL}`, {
     params: {
@@ -16,6 +17,7 @@ async function searchTopHeadlinesNews({
       image: 1,
       removeduplicate: 1,
       page,
+      q,
     },
   });
   console.log(response.data);

@@ -9,7 +9,7 @@
   z-index: 5000;
   pointer-events: none;
   transform: translateX(100%);
-  display: none;
+  /* display: none; */
   transition: all 500ms;
 }
 

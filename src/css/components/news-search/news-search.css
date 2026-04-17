@@ -1,0 +1,228 @@
+.section {
+}
+.news-search {
+}
+.container {
+}
+.news-search__title {
+  font-weight: 500;
+  font-size: var(--title-h2-text-mob);
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  padding: 40px 0;
+}
+.title {
+}
+.news-search__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: hidden;
+}
+.news-search__form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.search-form {
+  overflow: hidden;
+}
+.search-form__search {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.search-form__input {
+  padding: 16px 30px;
+  color: var(--description-text-color);
+  font-size: var(--text-big);
+  background-color: var(--card-bg-color);
+  border-radius: var(--btn-border-radius);
+}
+.search-form__country {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.search-form__country-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* margin-bottom: 12px; */
+  font-size: var(--text-big);
+}
+.search-form__svg-country {
+  stroke: none;
+  fill: var(--main-accent-color);
+}
+.search-form__country-title span {
+  display: none;
+}
+.search-form__country-select {
+  font-size: var(--text-small);
+}
+.search-form__country-select {
+  appearance: none;
+
+  background: #1a1a1a;
+  color: white;
+
+  border: 1px solid #333;
+  border-radius: 10px;
+
+  padding: 10px 36px 10px 14px;
+
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  padding: 8px 16px;
+  background-color: var(--main-bg-color);
+
+  transition: border 0.2s;
+}
+.search-form__country-select:hover,
+.search-form__country-select:focus {
+  border-color: var(--main-accent-color);
+  outline: var(--main-accent-color);
+}
+
+.search-form__country-select:focus {
+  outline: none;
+  border-color: #4f7cff;
+}
+.search-form__categories {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px;
+  overflow-x: auto;
+}
+.search-form__category-label {
+  width: 100%;
+  width: 150px;
+}
+.search-form__category-label + .search-form__category:checked {
+  border: 0.4px solid var(--main-accent-color);
+  background-color: var(--card-bg-color);
+}
+.search-form__category {
+}
+.search-form__category {
+  position: absolute;
+  opacity: 0;
+  width: 150px;
+  pointer-events: none;
+}
+.search-form__category-text {
+  border: 0.4px solid var(--card-border-color);
+  border-radius: var(--btn-border-radius);
+  background-color: var(--main-bg-color);
+  padding: 18px 16px;
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  gap: 6px;
+  color: var(--description-text-color);
+  font-size: var(--text-general);
+  transition: all 250ms;
+}
+.search-form__category-text:hover {
+  border: 0.4px solid var(--main-accent-color);
+}
+.search-form__svg {
+  stroke: none;
+  fill: var(--description-text-color);
+  width: 20px;
+  height: 20px;
+}
+.search-form__category:checked + .search-form__category-text {
+  color: var(--main-text-color);
+  border: 0.4px solid var(--main-accent-color);
+  background-color: var(--card-bg-color);
+}
+.search-form__category:checked + .search-form__category-text .search-form__svg {
+  fill: var(--main-text-color);
+}
+.search-form__btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search-form__btn {
+  border: 0.4px solid var(--card-border-color);
+  border-radius: var(--btn-border-radius);
+  background-color: var(--main-bg-color);
+  padding: 20px 14px;
+  width: 100%;
+  color: var(--description-text-color);
+  font-size: var(--text-general);
+  transition: all 250ms;
+}
+.search-form__btn-clear {
+  color: rgb(212, 60, 60);
+}
+.search-form__btn-clear:hover {
+  border: 0.4px solid rgb(212, 60, 60);
+}
+.search-form__btn-sub {
+}
+.search-form__btn-sub:hover {
+  color: var(--main-text-color);
+  border: 0.4px solid var(--main-accent-color);
+  background-color: var(--card-bg-color);
+}
+.news-search__list {
+}
+
+.news-search__item {
+}
+.news-search-img-wrapper {
+}
+.news-search-fallback {
+}
+.header__svg {
+}
+.news-search-img-wrapper__svg-wrapper {
+}
+.news-search-img-wrapper__svg {
+}
+.news-search__item-content {
+}
+.news-search__item-label {
+}
+.news-search__item-label-content {
+}
+.news-search__item-text {
+}
+.news-search__item-title {
+}
+.news-search__item-description {
+}
+.news-search__item-btn {
+}
+/* сам скролл (ширина) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+}
+
+/* трек (фон, та самая "рельса") */
+::-webkit-scrollbar-track {
+  background: transparent; /* можно убрать рельсу */
+}
+
+/* ползунок */
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-accent-color);
+  border-radius: 10px;
+}
+
+/* hover эффект */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
