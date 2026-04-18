@@ -11,6 +11,7 @@
 @import url('./components/modals/news-card-modal/news-card-modal.css');
 @import url('./components/modals/news-card-modal/news-card-modal-adaptive.css');
 @import url('./components/news-search/news-search.css');
+@import url('./components/news-search/news-search-adaptive.css');
 @import url('./components/loaders/search-loader.css');
 @import url('./base/adaptive.css');
 /* .wrapper {

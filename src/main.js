@@ -17,7 +17,7 @@ refs.topHeadlinesHero.addEventListener('click', e => {
   onNewsClick(e, newsStore.hero, '.hero__item');
 });
 refs.newsSearchList.addEventListener('click', e => {
-  onNewsClick(e, newsStore.latest, '.hero__item');
+  onNewsClick(e, newsStore.latest, '.news-search__item');
 });
 refs.newsSearchForm.addEventListener('submit', handleSearch);
 document.addEventListener(

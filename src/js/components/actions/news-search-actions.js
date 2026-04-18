@@ -18,7 +18,7 @@ const searchQueryParams = {
   country: 'us',
   category: 'top',
   q: null,
-  size: 3,
+  size: 4,
 };
 
 async function loadDefaultNews(query, category, country) {
