@@ -16,7 +16,7 @@
 .header-burger.active {
   visibility: visible;
   opacity: 1;
-  display: block;
+  /* display: block; */
   pointer-events: auto;
   transform: translateX(0);
 }
