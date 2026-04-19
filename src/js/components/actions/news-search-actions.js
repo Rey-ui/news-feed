@@ -36,7 +36,7 @@ async function loadDefaultNews(query, category, country) {
       searchQueryParams.country = 'us';
       iziToast.error({
         title: 'Error',
-        message: `❌Sorry, there is no news from this country!`,
+        message: `❌Sorry, nothing was found for your request!`,
       });
       return;
     }
@@ -91,9 +91,12 @@ async function handleSearch(e) {
   loadDefaultNews(searhQuery, categoryValue, countrySelect);
 }
 refs.clearBtn.addEventListener('click', () => {
-  refs.newsSearchForm.reset();
-  // newsStore.latest.length = 0;
-
+  const form = refs.newsSearchForm;
+  const searhQuery = form.elements.searchInput.value || null;
+  const countrySelect = form.elements.formCountrySelect.value;
+  const categoryValue = form.elements.categoryRadio.value;
+  if (!searhQuery && countrySelect == 'us' && categoryValue === 'top') return;
+  form.reset();
   loadDefaultNews(null, 'top', 'us');
 });
 export { loadDefaultNews, handleSearch };
