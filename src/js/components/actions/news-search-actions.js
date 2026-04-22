@@ -1,15 +1,14 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { refs, newsStore } from '../../services/refs.js';
-import markupSearchNewsCard from '../render/render-search-news-card.js';
+import markupNewsCard from '../render/render-news-card.js';
 import { searchTopHeadlinesNews } from '../../services/news-api.js';
 import {
   showLoadMoreNews,
   hideLoadMoreNews,
   showLoader,
   hideLoader,
-  showPreLoader,
-  hidePreLoader,
+  handleLoadMoreNews,
 } from './actions.js';
 
 const searchQueryParams = {
@@ -20,12 +19,19 @@ const searchQueryParams = {
   q: null,
   size: 4,
 };
+const loadMoreParams = {
+  loadMoreBtn: refs.loadMoreBtnNewsSearch,
+  preLoader: refs.newsSearchPreLoader,
+  queryParams: searchQueryParams,
+  newsStore: newsStore.latest,
+  newsList: refs.newsSearchList,
+  item: 'news-search__item',
+};
 
 async function loadDefaultNews(query, category, country) {
   searchQueryParams.q = query;
   searchQueryParams.category = category;
   searchQueryParams.country = country;
-
   showLoader(refs.newsSearchLoader);
   try {
     const { results, nextPage } =
@@ -40,13 +46,15 @@ async function loadDefaultNews(query, category, country) {
       });
       return;
     }
+    searchQueryParams.page = null;
     searchQueryParams.page = nextPage;
     refs.newsSearchList.innerHTML = '';
-    markupSearchNewsCard(refs.newsSearchList, newsStore.latest);
+    markupNewsCard(refs.newsSearchList, newsStore.latest, 'news-search__item');
+    const handler = createLoadMoreHandler(loadMoreParams);
     if (nextPage) {
-      showLoadMoreNews(refs.loadMoreBtnNewsSearch, handleLoadMoreHeroNews);
+      showLoadMoreNews(refs.loadMoreBtnNewsSearch, handler);
     } else {
-      hideLoadMoreNews(refs.loadMoreBtnNewsSearch, handleLoadMoreHeroNews);
+      hideLoadMoreNews(refs.loadMoreBtnNewsSearch, handler);
     }
   } catch (err) {
     console.log(err);
@@ -58,28 +66,11 @@ async function loadDefaultNews(query, category, country) {
     hideLoader(refs.newsSearchLoader);
   }
 }
-async function handleLoadMoreHeroNews() {
-  showPreLoader(refs.loadMoreBtnNewsSearch, refs.newsSearchPreLoader);
-  try {
-    const { results, nextPage } =
-      await searchTopHeadlinesNews(searchQueryParams);
-    newsStore.latest.push(...results);
-    markupSearchNewsCard(refs.newsSearchList, results);
-
-    searchQueryParams.page = nextPage;
-
-    if (!nextPage) {
-      iziToast.info({
-        title: 'Message',
-        message: "You've reached the end of results",
-      });
-
-      hideLoadMoreNews(refs.loadMoreBtnNewsSearch, handleLoadMoreHeroNews);
-    }
-  } catch (err) {
-  } finally {
-    hidePreLoader(refs.loadMoreBtnNewsSearch, refs.newsSearchPreLoader);
-  }
+function createLoadMoreHandler(config) {
+  return async function handler() {
+    console.log(refs.loadMoreBtnNewsSearch);
+    await handleLoadMoreNews(config);
+  };
 }
 async function handleSearch(e) {
   e.preventDefault();
@@ -87,7 +78,7 @@ async function handleSearch(e) {
   const searhQuery = form.elements.searchInput.value || null;
   const countrySelect = form.elements.formCountrySelect.value;
   const categoryValue = form.elements.categoryRadio.value;
-
+  searchQueryParams.page = null;
   loadDefaultNews(searhQuery, categoryValue, countrySelect);
 }
 refs.clearBtn.addEventListener('click', () => {

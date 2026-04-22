@@ -6,6 +6,8 @@
 @import url('./components/modals/header-modal/header-modal.css');
 @import url('./components/header/header-adaptive.css');
 @import url('./components/modals/header-modal//header-modal-adaptive.css');
+@import url('./components/news-card/news-card.css');
+@import url('./components/news-card/news-card-adaptive.css');
 @import url('./components/hero/hero.css');
 @import url('./components/hero/hero-adaptive.css');
 @import url('./components/modals/news-card-modal/news-card-modal.css');

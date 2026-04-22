@@ -36,63 +36,11 @@
     padding: 60px 15px;
     grid-column: 1 / -1;
   }
-  .news-fallback {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 330px;
-    height: 185px;
-    background-color: var(--card-bg-color);
-    border-radius: 10px;
-  }
-  .news-img-wrapper__svg-wrapper {
-    width: 358px;
-    height: 185px;
-  }
-  .news-img-wrapper__svg {
-    width: 60px;
-    height: 60px;
-  }
-  .hero__item-content {
-    gap: 12px;
-  }
-  .hero__item-label {
-    gap: 14px;
-    height: 100%;
-  }
-  .hero__item-label-content {
-    gap: 6px;
-    height: 100%;
-    justify-content: space-between;
-  }
-
-  .hero__item-text {
-    gap: 10px;
-    height: 100%;
-  }
-  .hero__item-title {
-    font-size: var(--title-h3-text-tab);
-  }
-  .hero__item-description {
-    font-size: var(--text-general);
-  }
-  .hero__item-btn {
-    padding: 12px 22px;
-    font-size: var(--text-big);
-
-    gap: 8px;
-  }
 
   .hero__load-more {
     padding: 18px 28px;
     font-size: var(--text-big);
     gap: 8px;
-  }
-  .hero__item-title {
-    -webkit-line-clamp: 1;
-  }
-  .hero__item-description {
-    -webkit-line-clamp: 4;
   }
 }
 /* ==========header=====min-width: 1440px================= */
@@ -128,75 +76,9 @@
     display: flex;
     align-items: flex-start;
   }
-
-  .news-img-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 515px;
-  }
-  .news-img-wrapper img {
-    border-radius: 10px;
-    height: 185px;
-  }
-  .hero__item:first-child .news-img-wrapper img {
-    height: 100%;
-    max-height: 325px;
-    width: 515px;
-    height: 325px;
-  }
-  .news-fallback {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 330px;
-    height: 185px;
-    background-color: var(--card-bg-color);
-    border-radius: 10px;
-  }
-  .news-img-wrapper__svg-wrapper {
-    width: 358px;
-    height: 185px;
-  }
-  .news-img-wrapper__svg {
-    width: 60px;
-    height: 60px;
-  }
-  .hero__item-content {
-    gap: 14px;
-  }
-  .hero__item-label {
-    gap: 16px;
-  }
-  .hero__item-label-content {
-    gap: 10px;
-    font-size: var(--text-general);
-  }
-
-  .hero__item-text {
-    gap: 12px;
-  }
-  .hero__item-title {
-    font-size: var(--title-h3-text-desk);
-  }
-
-  .hero__item-btn {
-    padding: 14px 22px;
-    font-size: var(--text-general);
-    gap: 8px;
-  }
-
   .hero__load-more {
     padding: 20px 32px;
     gap: 10px;
-  }
-
-  .hero__item-title {
-    -webkit-line-clamp: 2;
-  }
-  .hero__item-description {
-    -webkit-line-clamp: 6;
   }
 }
 /* ================================ */

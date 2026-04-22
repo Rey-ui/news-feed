@@ -22,5 +22,4 @@ export const refs = {
 export const newsStore = {
   hero: [],
   latest: [],
-  trending: [],
 };

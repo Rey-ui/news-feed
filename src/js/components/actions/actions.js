@@ -1,46 +1,18 @@
-// import { refs } from './services/refs.js';
-// import markupHeroNewsCard from './components/render/render-hero-news-card.js';
-
-// refs.countrySelect.addEventListener('change', getSelect);
-// function getSelect(e) {
-//   if (!e.target) return 'us';
-//   const selectedValue = e.target.value;
-//   return selectedValue;
-// }
-
-// import { searchTopHeadlinesNews, searchAllNews } from './services/news-api.js';
-// async function handleSearchTopHedlinesNews() {
-//   //showLoader();
-
-//   try {
-//     const news = await searchTopHeadlinesNews(getSelect);
-//     // console.log(city.weather[0].main);
-//     // if (!city || city.length === 0) {
-//     //   return;
-//     // } else {
-//     refs.countrySelect.innerHTML = '';
-//     // const cities = searchTopHeadlinesNews(getSelect);
-//     markupHeroNewsCard(refs.countrySelect, news);
-//     //refreshBtn.classList.add('active-btn');
-//     // }
-//   } catch (err) {
-//     console.log(err);
-//     // iziToast.error({
-//     //   title: 'Error',
-//     //   message: `❌Sorry, nothing was found for your request!`,
-//     // });
-//   } finally {
-//     // hideLoader();
-//     // form.reset();
-//   }
-// }
-
-// handleSearchTopHedlinesNews();
 import { refs } from '../../services/refs.js';
 import markupModalNews from '../render/render-modal-news.js';
+import { searchTopHeadlinesNews } from '../../services/news-api.js';
+import markupNewsCard from '../render/render-news-card.js';
+let currentHandler = null;
+
 function showLoadMoreNews(loadMorebtn, handleLoadMore) {
   loadMorebtn.classList.remove('hidden-hero');
+
+  if (currentHandler) {
+    loadMorebtn.removeEventListener('click', currentHandler);
+  }
+
   loadMorebtn.addEventListener('click', handleLoadMore);
+  currentHandler = handleLoadMore;
 }
 function hideLoadMoreNews(loadMorebtn, handleLoadMore) {
   loadMorebtn.classList.add('hidden-hero');
@@ -91,6 +63,35 @@ function closeNewsModal() {
   refs.newsModal.innerHTML = '';
   window.removeEventListener('keydown', handleEscapeKeyPress);
 }
+async function handleLoadMoreNews({
+  loadMoreBtn,
+  preLoader,
+  queryParams,
+  newsStore,
+  newsList,
+  item,
+}) {
+  showPreLoader(loadMoreBtn, preLoader);
+  try {
+    const { results, nextPage } = await searchTopHeadlinesNews(queryParams);
+    newsStore.push(...results);
+    markupNewsCard(newsList, results, item);
+    queryParams.page = null;
+    queryParams.page = nextPage;
+
+    if (!nextPage) {
+      iziToast.info({
+        title: 'Message',
+        message: "You've reached the end of results",
+      });
+
+      hideLoadMoreNews(loadMoreBtn, handleLoadMoreHeroNews);
+    }
+  } catch (err) {
+  } finally {
+    hidePreLoader(loadMoreBtn, preLoader);
+  }
+}
 export {
   showLoadMoreNews,
   hideLoadMoreNews,
@@ -99,4 +100,5 @@ export {
   showPreLoader,
   hidePreLoader,
   onNewsClick,
+  handleLoadMoreNews,
 };
