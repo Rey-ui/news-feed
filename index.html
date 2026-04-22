@@ -9,7 +9,7 @@
     <script type="module" crossorigin src="/news-feed/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/news-feed/assets/vendor-db25513e.js">
     <link rel="stylesheet" href="/news-feed/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/news-feed/assets/index-04121bea.css">
+    <link rel="stylesheet" href="/news-feed/assets/index-8236b73a.css">
   </head>
   <body>
     <header class="header">
@@ -41,13 +41,10 @@
           <nav class="header__nav">
             <ul class="header__list">
               <li class="header__item">
-                <a href="" class="header__item-link">Top Stories</a>
+                <a href="#top" class="header__item-link">Top Stories</a>
               </li>
               <li class="header__item">
-                <a href="" class="header__item-link">Search news</a>
-              </li>
-              <li class="header__item">
-                <a href="" class="header__item-link">Categories</a>
+                <a href="#search" class="header__item-link">Search news</a>
               </li>
             </ul>
             <button type="button" class="header-burger__btn">
@@ -63,13 +60,14 @@
               </button>
               <ul class="header-burger__list">
                 <li class="header-burger__item">
-                  <a href="" class="header-burger__item-link">Top Stories</a>
+                  <a href="#top" class="header-burger__item-link"
+                    >Top Stories</a
+                  >
                 </li>
                 <li class="header-burger__item">
-                  <a href="" class="header-burger__item-link">Search news</a>
-                </li>
-                <li class="header-burger__item">
-                  <a href="" class="header-burger__item-link">Categories</a>
+                  <a href="#search" class="header-burger__item-link"
+                    >Search news</a
+                  >
                 </li>
               </ul>
             </div>
@@ -78,7 +76,7 @@
       </div>
     </header>
     <main class="main">
-      <section class="section hero">
+      <section id="top" class="section hero">
         <div class="container">
           <div class="hero__up">
             <h1 class="hero__title">Today's Headlines: Stay Informed</h1>
@@ -101,7 +99,7 @@
           </div>
         </div>
       </section>
-      <section class="section news-search">
+      <section id="search" class="section news-search">
         <div class="container">
           <h2 class="news-search__title title">
             Discover the World of Headlines and Searching
