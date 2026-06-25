@@ -8,8 +8,6 @@ import {
   hideLoadMoreNews,
   showLoader,
   hideLoader,
-  // showPreLoader,
-  // hidePreLoader,
   handleLoadMoreNews,
 } from './actions.js';
 const heroQueryParams = {

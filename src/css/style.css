@@ -1,5 +1,5 @@
 @import url('./base/reset.css');
-/* @import url('./loaders/loader.css'); */
+
 @import url('./base/base.css');
 @import url('./components/loaders/hero-loader.css');
 @import url('./components/header/header.css');
@@ -16,22 +16,6 @@
 @import url('./components/news-search/news-search-adaptive.css');
 @import url('./components/loaders/search-loader.css');
 @import url('./base/adaptive.css');
-/* .wrapper {
-  margin: 0 auto;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-} */
-
-/* .container {
-  max-width: 768px;
-}
-.container {
-  max-width: 1440px;
-} */
 body {
   overflow-x: hidden;
 }
